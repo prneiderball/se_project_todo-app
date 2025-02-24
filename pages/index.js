@@ -1,29 +1,13 @@
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 import { initialTodos, validationConfig } from "../utils/constants.js";
 import Todo from "../components/Todo.js";
-import FormValidator from "../components/FormValidator.js";
+import formValidator from "../components/FormValidator.js";
 
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopup = document.querySelector("#add-todo-popup");
 const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 const todosList = document.querySelector(".todos__list");
-
-function handleEscClose(event) {
-  if (event.key === "Esc") {
-    closePopup(document.querySelector(".popup_opened"));
-  }
-}
-
-function openPopup(popupElement) {
-  popupElement.classList.add("popup_opened");
-  document.addEventListener("keydown", handleEscClose);
-}
-
-function closePopup(popupElement) {
-  popupElement.classList.remove("popup_opened");
-  document.removeEventListener("keydown", handleEscClose);
-}
 
 const openModal = (modal) => {
   modal.classList.add("popup_visible");
@@ -33,19 +17,23 @@ const closeModal = (modal) => {
   modal.classList.remove("popup_visible");
 };
 
+// Function to generate a Todo item from data
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template");
   return todo.getView();
 };
 
+// Open add-todo modal
 addTodoButton.addEventListener("click", () => {
   openModal(addTodoPopup);
 });
 
+// Close add-todo modal
 addTodoCloseBtn.addEventListener("click", () => {
   closeModal(addTodoPopup);
 });
 
+// Handle new todo submission
 addTodoForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
@@ -54,6 +42,7 @@ addTodoForm.addEventListener("submit", (evt) => {
 
   const id = uuidv4();
 
+  // Create a date object and adjust for timezone
   const date = new Date(dateInput);
   date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
 
@@ -67,10 +56,11 @@ addTodoForm.addEventListener("submit", (evt) => {
   evt.target.reset();
 });
 
+// Load initial todos from constants.js
 initialTodos.forEach((item) => {
   const todo = generateTodo(item);
   todosList.append(todo);
 });
 
-const newtodovalidator = new FormValidator(validationConfig, addTodoForm);
+const newtodovalidator = new formValidator(validationConfig, addTodoForm);
 newtodovalidator.enableValidation();
