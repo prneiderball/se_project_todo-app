@@ -52,15 +52,19 @@ class FormValidator {
   }
 
   resetValidation() {
+    this._formElement.reset();
+
     this._inputList.forEach((inputElement) => {
       const errorElement = this._formElement.querySelector(
         `#${inputElement.id}-error`
       );
-      errorElement.textContent = "";
+      if (errorElement) {
+        errorElement.textContent = "";
+      }
       inputElement.classList.remove(this._settings.inputErrorClass);
     });
+
     this._toggleSubmitButtonState();
-    this._formElement.reset();
   }
 }
 
