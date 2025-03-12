@@ -5,7 +5,7 @@ class PopupWithForm extends Popup {
     super(popupSelector);
     this._submitHandler = submitHandler;
     this._form = this._popup.querySelector(".popup__form");
-    this._inputList = this._form.querySelectorAll(".popup__input"); // Store inputs as a class field
+    this._inputList = this._form.querySelectorAll(".popup__input");
   }
 
   _getInputValues() {
@@ -21,12 +21,12 @@ class PopupWithForm extends Popup {
     this._form.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this._submitHandler(this._getInputValues());
-      this._form.reset(); // Clear inputs only after successful submission
+      this._form.reset();
     });
   }
 
   close() {
-    super.close(); // Do NOT reset the form here, so data is preserved if the popup is closed unexpectedly
+    super.close();
   }
 }
 
