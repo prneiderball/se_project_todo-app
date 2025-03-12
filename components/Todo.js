@@ -1,27 +1,16 @@
 class Todo {
-  constructor(data, selector, TodoCounter) {
+  constructor(data, selector, todoCounter) {
     this._data = data;
     this._selector = selector;
-    this._todoCounter = TodoCounter;
+    this._todoCounter = todoCounter;
     this._template = document.querySelector(this._selector);
+
     if (!this._template) {
       throw new Error(`Template with selector ${this._selector} not found`);
     }
   }
 
-  _setEventListeners() {
-    this._todoDeleteBtn.addEventListener("click", () => {
-      this._todoElement.remove();
-      this._todoCounter.updateTotal(false);
-    });
-
-    this._todoCheckboxEl.addEventListener("change", () => {
-      this._data.completed = this._todoCheckboxEl.checked;
-      this._todoCounter.updateCompleted(this._todoCheckboxEl.checked); // Update based on checkbox state
-    });
-  }
-
-  getView() {
+  _initializeElements() {
     this._todoElement = this._template.content
       .querySelector(".todo")
       .cloneNode(true);
@@ -31,6 +20,27 @@ class Todo {
     this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
     this._todoLabel = this._todoElement.querySelector(".todo__label");
     this._todoDate = this._todoElement.querySelector(".todo__date");
+  }
+
+  _setEventListeners() {
+    // Checkbox change listener
+    this._todoCheckboxEl.addEventListener("change", (event) => {
+      this._data.completed = event.target.checked;
+      this._todoCounter.updateCompleted(event.target.checked);
+    });
+
+    // Delete button listener
+    this._todoDeleteBtn.addEventListener("click", () => {
+      if (this._data.completed) {
+        this._todoCounter.updateCompleted(false);
+      }
+      this._todoCounter.updateTotal(false);
+      this._todoElement.remove();
+    });
+  }
+
+  getView() {
+    this._initializeElements();
 
     this._todoNameEl.textContent = this._data.name;
     this._todoCheckboxEl.checked = this._data.completed;
@@ -38,13 +48,13 @@ class Todo {
     this._todoLabel.setAttribute("for", `todo-${this._data.id}`);
 
     const dueDate = new Date(this._data.date);
-    if (!isNaN(dueDate)) {
-      this._todoDate.textContent = `Due: ${dueDate.toLocaleString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric"
-      })}`;
-    }
+    this._todoDate.textContent = !isNaN(dueDate)
+      ? `Due: ${dueDate.toLocaleString("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "numeric"
+        })}`
+      : "No due date";
 
     this._setEventListeners();
 
