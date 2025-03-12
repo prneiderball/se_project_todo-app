@@ -23,13 +23,11 @@ class Todo {
   }
 
   _setEventListeners() {
-    // Checkbox change listener
     this._todoCheckboxEl.addEventListener("change", (event) => {
       this._data.completed = event.target.checked;
       this._todoCounter.updateCompleted(event.target.checked);
     });
 
-    // Delete button listener
     this._todoDeleteBtn.addEventListener("click", () => {
       if (this._data.completed) {
         this._todoCounter.updateCompleted(false);
