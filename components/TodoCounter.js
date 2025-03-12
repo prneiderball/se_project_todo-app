@@ -1,7 +1,7 @@
 class TodoCounter {
   constructor(initialTodos, containerSelector) {
     this._element = document.querySelector(containerSelector);
-    this._total = 3;
+    this._total = initialTodos.length;
     this._completed = 1;
     this._updateText();
   }
