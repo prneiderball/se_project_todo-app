@@ -1,7 +1,8 @@
 class Todo {
-  constructor(data, selector) {
+  constructor(data, selector, TodoCounter) {
     this._data = data;
     this._selector = selector;
+    this._todoCounter = TodoCounter;
     this._template = document.querySelector(this._selector);
     if (!this._template) {
       throw new Error(`Template with selector ${this._selector} not found`);
@@ -11,10 +12,12 @@ class Todo {
   _setEventListeners() {
     this._todoDeleteBtn.addEventListener("click", () => {
       this._todoElement.remove();
+      this._todoCounter.updateTotal(false);
     });
 
     this._todoCheckboxEl.addEventListener("change", () => {
       this._data.completed = this._todoCheckboxEl.checked;
+      this._todoCounter.updateCompleted(this._todoCheckboxEl.checked); // Update based on checkbox state
     });
   }
 

@@ -31,3 +31,5 @@ class PopupWithForm extends Popup {
     super.close();
   }
 }
+
+export default PopupWithForm;
