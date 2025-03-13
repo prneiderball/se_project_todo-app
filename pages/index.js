@@ -25,12 +25,17 @@ const section = new Section({
   containerSelector: ".todos__list"
 });
 
+const displayDate = (date) => {
+  // Check if the date is null or empty string and handle it
+  return date ? date.toLocaleDateString() : "";
+};
+
 const todopopup = new PopupWithForm("#add-todo-popup", (formData) => {
   const id = uuidv4();
   const values = {
     id,
     name: formData.name,
-    date: formData.date ? new Date(formData.date) : null || null,
+    date: formData.date ? new Date(formData.date) : "",
 
     completed: false
   };

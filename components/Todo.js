@@ -52,7 +52,7 @@ class Todo {
           month: "short",
           day: "numeric"
         })}`
-      : "No due date";
+      : "";
 
     this._setEventListeners();
 
