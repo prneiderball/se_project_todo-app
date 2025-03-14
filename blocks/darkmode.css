@@ -1,46 +1,76 @@
-/* Ensure dark mode styles override everything */
+/* Define dark mode color variables */
+:root {
+  --dark-bg: #121212;
+  --dark-text: #ffffff;
+  --button-bg: #333;
+  --button-hover-bg: #444;
+  --button-text: #fff;
+  --input-bg: #333;
+  --input-border: #555;
+  --todo-list-bg: #1e1e1e;
+  --todo-bg: #2a2a2a;
+  --todo-border: #444;
+  --darkmode-btn-bg: #222;
+}
+
+/* Universal dark mode styles with unified, smoother transitions */
 body.dark-mode,
 body.dark-mode * {
-  background-color: #121212 !important;
-  color: #ffffff !important;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
-    border-color 0.3s ease-in-out;
+  background-color: var(--dark-bg) !important;
+  color: var(--dark-text) !important;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Buttons */
 body.dark-mode button {
-  background-color: #333 !important;
-  color: white !important;
-  background: none !important;
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
   border: none;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* Dark mode button itself */
+body.dark-mode button:hover {
+  background-color: var(--button-hover-bg) !important;
+}
+
+/* Dark mode toggle button */
 body.dark-mode .darkmode__button {
-  background-color: #222 !important;
-  color: #fff !important;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
-    border-color 0.3s ease-in-out;
+  background-color: var(--darkmode-btn-bg) !important;
+  color: var(--button-text) !important;
   border: none;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+body.dark-mode .darkmode__button:hover {
+  background-color: var(--button-hover-bg) !important;
 }
 
 /* Inputs and Textareas */
 body.dark-mode input,
 body.dark-mode textarea {
-  background-color: #333 !important;
-  color: white !important;
-  border: 1px solid #555 !important;
+  background-color: var(--input-bg) !important;
+  color: var(--dark-text) !important;
+  border: 1px solid var(--input-border) !important;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Todo List */
 body.dark-mode .todos__list {
-  background-color: #1e1e1e !important;
-  color: white !important;
+  background-color: var(--todo-list-bg) !important;
+  color: var(--dark-text) !important;
 }
 
 /* Todo Items */
 body.dark-mode .todo {
-  background-color: #2a2a2a !important;
-  color: white !important;
-  border: 1px solid #444 !important;
+  background-color: var(--todo-bg) !important;
+  color: var(--dark-text) !important;
+  border: 1px solid var(--todo-border) !important;
 }
