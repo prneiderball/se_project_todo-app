@@ -1,0 +1,40 @@
+/* Ensure dark mode styles override everything */
+body.dark-mode,
+body.dark-mode * {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+/* Buttons */
+body.dark-mode button {
+  background-color: #333 !important;
+  color: white !important;
+}
+
+/* Dark mode button itself */
+body.dark-mode .darkmode__button {
+  background-color: #222 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Inputs and Textareas */
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #333 !important;
+  color: white !important;
+  border: 1px solid #555 !important;
+}
+
+/* Todo List */
+body.dark-mode .todos__list {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+/* Todo Items */
+body.dark-mode .todo {
+  background-color: #2a2a2a !important;
+  color: white !important;
+  border: 1px solid #444 !important;
+}

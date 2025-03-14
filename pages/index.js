@@ -5,6 +5,7 @@ import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import TodoCounter from "../components/TodoCounter.js";
+import Darkmode from "../components/Darkmode.js";
 
 const addTodoButton = document.querySelector(".button_action_add");
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
@@ -40,6 +41,9 @@ const todopopup = new PopupWithForm("#add-todo-popup", (formData) => {
   newTodoValidator.resetValidation();
   todopopup.close();
 });
+
+const darkMode = new Darkmode("#dark-mode-toggle");
+darkMode.init();
 
 const addTodoForm = todopopup.getForm();
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);

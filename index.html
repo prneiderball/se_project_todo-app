@@ -6,16 +6,23 @@
     <title>Simple ToDo App</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
-
   <body>
     <div class="page">
       <div class="page__content">
         <header class="header">
           <h1 class="header__title">The Simple ToDo App</h1>
           <p class="header__banner">Do these things</p>
-          <button class="button button_action_add header__button">
-            + Add Todo
-          </button>
+          <div class="button__container">
+            <button class="button button_action_add header__button">
+              + Add Todo
+            </button>
+            <button
+              class="header__button darkmode__button"
+              id="dark-mode-toggle"
+            >
+              🌙 Dark Mode
+            </button>
+          </div>
           <div class="popup" id="add-todo-popup">
             <div class="popup__content">
               <h3 class="popup__title">Add new ToDo</h3>
