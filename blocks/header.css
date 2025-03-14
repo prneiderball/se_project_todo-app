@@ -29,6 +29,8 @@
 
 .header__button {
   margin-left: auto;
+  border: none;
+  background: none;
 }
 
 @media screen and (max-width: 1030px) {

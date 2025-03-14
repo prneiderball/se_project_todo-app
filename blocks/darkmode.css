@@ -3,19 +3,25 @@ body.dark-mode,
 body.dark-mode * {
   background-color: #121212 !important;
   color: #ffffff !important;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 }
 
 /* Buttons */
 body.dark-mode button {
   background-color: #333 !important;
   color: white !important;
+  background: none !important;
+  border: none;
 }
 
 /* Dark mode button itself */
 body.dark-mode .darkmode__button {
   background-color: #222 !important;
   color: #fff !important;
-  border-color: #fff !important;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+  border: none;
 }
 
 /* Inputs and Textareas */

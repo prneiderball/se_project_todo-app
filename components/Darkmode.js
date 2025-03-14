@@ -29,10 +29,10 @@ class Darkmode {
   toggleDarkMode() {
     if (this.body.classList.contains("dark-mode")) {
       this.disableDarkMode();
-      this.toggleButton.textContent = "🌙 Dark Mode";
+      this.toggleButton.textContent = "🌙 Switch to Dark Mode";
     } else {
       this.enableDarkMode();
-      this.toggleButton.textContent = "☀️ Light Mode";
+      this.toggleButton.textContent = "☀️ Switch to Light Mode";
     }
   }
 }
