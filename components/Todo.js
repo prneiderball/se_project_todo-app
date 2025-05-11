@@ -26,6 +26,11 @@ class Todo {
     this._todoCheckboxEl.addEventListener("change", (event) => {
       this._data.completed = event.target.checked;
       this._todoCounter.updateCompleted(event.target.checked);
+      this._todoElement.classList.toggle("todo_completed", event.target.checked);
+
+          console.log("Checkbox changed:", event.target.checked);
+    console.log("Todo completed status:", this._data.completed);
+    console.log("Todo element classes:", this._todoElement.classList);
     });
 
     this._todoDeleteBtn.addEventListener("click", () => {
