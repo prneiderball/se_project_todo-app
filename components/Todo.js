@@ -15,6 +15,10 @@ class Todo {
       .querySelector(".todo")
       .cloneNode(true);
 
+    // Make the todo item draggable and assign a unique data-id
+    this._todoElement.setAttribute("draggable", "true");
+    this._todoElement.setAttribute("data-id", this._data.id);
+
     this._todoNameEl = this._todoElement.querySelector(".todo__name");
     this._todoCheckboxEl = this._todoElement.querySelector(".todo__completed");
     this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
@@ -27,10 +31,6 @@ class Todo {
       this._data.completed = event.target.checked;
       this._todoCounter.updateCompleted(event.target.checked);
       this._todoElement.classList.toggle("todo_completed", event.target.checked);
-
-          console.log("Checkbox changed:", event.target.checked);
-    console.log("Todo completed status:", this._data.completed);
-    console.log("Todo element classes:", this._todoElement.classList);
     });
 
     this._todoDeleteBtn.addEventListener("click", () => {
