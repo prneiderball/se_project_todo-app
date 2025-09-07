@@ -7,6 +7,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import TodoCounter from "../components/TodoCounter.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("initialTodos:", initialTodos);
   const addTodoButton = document.querySelector(".button_action_add");
   const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 

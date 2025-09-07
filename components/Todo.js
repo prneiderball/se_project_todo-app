@@ -30,7 +30,10 @@ class Todo {
     this._todoCheckboxEl.addEventListener("change", (event) => {
       this._data.completed = event.target.checked;
       this._todoCounter.updateCompleted(event.target.checked);
-      this._todoElement.classList.toggle("todo_completed", event.target.checked);
+      this._todoElement.classList.toggle(
+        "todo_completed",
+        event.target.checked
+      );
     });
 
     this._todoDeleteBtn.addEventListener("click", () => {
@@ -55,11 +58,16 @@ class Todo {
       ? `Due: ${dueDate.toLocaleString("en-US", {
           year: "numeric",
           month: "short",
-          day: "numeric"
+          day: "numeric",
         })}`
       : "";
 
     this._setEventListeners();
+
+    if (this._data.completed) {
+      this._todoElement.classList.add("todo_completed");
+      this._todoCounter.updateCompleted(true);
+    }
 
     return this._todoElement;
   }

@@ -7,7 +7,7 @@ class TodoCounter {
   }
 
   updateCompleted(isCompleted) {
-    const delta = isCompleted ? 1 : -1;
+    const delta = isCompleted ? 0 : -1;
     this._completed = Math.max(0, this._completed + delta);
     this._updateText();
   }
