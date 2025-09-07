@@ -1,43 +1,63 @@
 # Simple Todo App
 
-A lightweight, modular Todo application built with vanilla JavaScript, HTML, and CSS. The app allows you to add, manage, and delete to-do items while validating user input in real-time.
+A lightweight, modular Todo application built with vanilla JavaScript, HTML, and CSS. This app allows users to create, manage, and track todo items with a clean interface, real-time form validation, and drag-and-drop functionality for reordering tasks.
 
-## Functionality
+![Main UI](screenshots/main-ui.png) <!-- add screenshot >
 
-- **Add Todos:**  
-  Open the modal popup to create a new todo item. The app validates your input before submission to ensure all required fields are correctly filled.
+## Features
 
-- **Manage Todos:**  
-  Each todo card displays the task name (and optional date). You can mark todos as complete or delete them, with interactive event listeners ensuring smooth user interactions.
+- **Add Todos**:  
+  Create new todo items via a modal popup. Input validation ensures the task name meets requirements before submission. An optional due date can be added.
 
-- **Validation:**  
-  The form is validated using a dedicated `FormValidator` class. If invalid data is entered, error indicators are displayed next to the respective inputs, and the submit button is disabled until all fields are corrected.
+- **Manage Todos**:  
+  Each todo displays its name, optional due date, and completion status. Users can:
+  - Mark todos as complete/incomplete using checkboxes.
+  - Delete todos with a single click.
+  - Reorder todos using drag-and-drop functionality.
 
-- **Modal Interactions:**  
-  The popup modal can be opened and closed using on-screen buttons, and it also supports closing via the Escape (Esc) key. On closing, the form resets to its pristine state.
+- **Filter Todos**:  
+  Filter todos by:
+  - **All**: View all tasks.
+  - **Completed**: View only completed tasks.
+  - **Incomplete**: View only incomplete tasks.
+  The counter updates dynamically to reflect the number of visible and completed todos.
 
-## Technology
+- **Real-Time Validation**:  
+  The `FormValidator` class ensures valid input in the add-todo form, displaying error messages for invalid fields and disabling the submit button until all inputs are valid.
 
-- **JavaScript (ES6):**  
-  The project uses modern JavaScript features, including ES6 classes and modules. The code is split into separate files:
-  - **Todo.js:** Contains the `Todo` class, which handles creation of each todo item and its associated events.
-  - **FormValidator.js:** Contains the `FormValidator` class, which manages form input validation and state resetting.
-- **HTML & CSS:**  
-  The app uses standard HTML for structure and CSS for styling. Templates and safe DOM manipulation practices (using `textContent` rather than `innerHTML`) are used to ensure security and performance.
+- **Interactive Modal**:  
+  The popup modal for adding todos supports:
+  - Opening/closing via buttons.
+  - Closing with the Escape (Esc) key.
+  - Automatic form reset on close.
 
-- **Additional Libraries:**
+- **Task Counter**:  
+  A counter displays the number of completed todos out of the total, updating dynamically as todos are added, deleted, completed, or filtered.
 
-  - [UUID](https://jspm.dev/uuid): Used to generate unique identifiers for each todo item.
+![Adding Todo](screenshots/adding-todo.png)  
+![Form Validation](screenshots/form-validation.png)
 
-- **Screenshots/GIFs:**  
-  ![Main UI](image.png)
-  ![Validation](image-1.png)
-  ![Adding todo](image-2.png)
+## Technologies
 
-## Deployment
+- **JavaScript (ES6)**:  
+  Utilizes modern JavaScript with ES6 classes and modules for modularity. Key components include:
+  - `Todo.js`: Manages the creation and event handling (completion, deletion) for individual todo items.
+  - `TodoCounter.js`: Tracks and displays the count of completed and total todos.
+  - `FormValidator.js`: Handles real-time form validation and error messaging.
+  - `Section.js`: Renders and manages the list of todos.
+  - `PopupWithForm.js`: Controls the modal popup for adding todos.
+  - Safe DOM manipulation using `textContent` to prevent XSS vulnerabilities.
 
-This project is deployed on GitHub Pages and can be accessed at:
+- **HTML & CSS**:  
+  - Semantic HTML for accessibility and structure.
+  - CSS for responsive, clean styling with a focus on usability.
+  - HTML `<template>` used for efficient todo rendering.
 
-[https://prneiderball.github.io/se_project_todo-app/](https://prneiderball.github.io/se_project_todo-app/)
+- **Third-Party Libraries**:  
+  - [UUID](https://jspm.dev/uuid): Generates unique IDs for each todo item.
 
----
+## Setup
+
+### Prerequisites
+- A modern web browser (e.g., Chrome, Firefox, Edge).
+- Node.js (optional, for local development with a live server).
