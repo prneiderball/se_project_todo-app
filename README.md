@@ -72,5 +72,5 @@ A lightweight, modular Todo application built with vanilla JavaScript, HTML, and
 
 - server
 - database
-  -jwt auth
-  -data persistance
+  - jwt auth
+  - data persistance
