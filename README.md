@@ -10,6 +10,7 @@ A lightweight, modular Todo application built with vanilla JavaScript, HTML, and
   Create new todo items via a modal popup. Input validation ensures the task name meets requirements before submission. An optional due date can be added.
 
 - **Manage Todos**:
+
   ![Adding Todo](./screenshots/todomodal.png)
   Each todo displays its name, optional due date, and completion status. Users can:
 
