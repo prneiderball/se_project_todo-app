@@ -6,24 +6,23 @@ A lightweight, modular Todo application built with vanilla JavaScript, HTML, and
 
 ## Features
 
-- **Add Todos**:  
+- **Add Todos**:
+  ![Adding Todo](./screenshots/todomodal.png)
   Create new todo items via a modal popup. Input validation ensures the task name meets requirements before submission. An optional due date can be added.
 
 - **Manage Todos**:
-
-  ![Adding Todo](./screenshots/todomodal.png)
   Each todo displays its name, optional due date, and completion status. Users can:
 
   - Mark todos as complete/incomplete using checkboxes.
   - Delete todos with a single click.
   - Reorder todos using drag-and-drop functionality.
 
-- **Filter Todos**:  
-  Filter todos by:
+- **Filter Todos**:
 
   - **All**: View all tasks.
   - **Completed**: View only completed tasks.
   - **Incomplete**: View only incomplete tasks.
+    ![todoCounter](./screenshots/todoCounter.png)
     The counter updates dynamically to reflect the number of visible and completed todos.
 
 - **Real-Time Validation**:  
@@ -67,3 +66,10 @@ A lightweight, modular Todo application built with vanilla JavaScript, HTML, and
 
 - A modern web browser (e.g., Chrome, Firefox, Edge).
 - Node.js (optional, for local development with a live server).
+
+### coming soon
+
+- server
+- database
+  -jwt auth
+  -data persistance
