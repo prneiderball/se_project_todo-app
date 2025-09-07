@@ -1,5 +1,4 @@
-## Bug: Counter Starts at 1/3 Completed
-
+## Bug: todoCounter displaying incorrectly
 **Date:** 2025-09-06
 
 ### Observation

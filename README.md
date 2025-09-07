@@ -2,7 +2,7 @@
 
 A lightweight, modular Todo application built with vanilla JavaScript, HTML, and CSS. This app allows users to create, manage, and track todo items with a clean interface, real-time form validation, and drag-and-drop functionality for reordering tasks.
 
-![Main UI](screenshots/main-ui.png) <!-- add screenshot >
+![Main UI](./screenshots/mainscreen.png) <!-- add screenshot >
 
 ## Features
 
@@ -25,7 +25,8 @@ A lightweight, modular Todo application built with vanilla JavaScript, HTML, and
 - **Real-Time Validation**:  
   The `FormValidator` class ensures valid input in the add-todo form, displaying error messages for invalid fields and disabling the submit button until all inputs are valid.
 
-- **Interactive Modal**:  
+- **Interactive Modal**: 
+![Add todo modal](./screenshots/todomodal.png)
   The popup modal for adding todos supports:
   - Opening/closing via buttons.
   - Closing with the Escape (Esc) key.
