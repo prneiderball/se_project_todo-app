@@ -34,8 +34,8 @@ A lightweight, modular Todo application built with vanilla JavaScript, HTML, and
 - **Task Counter**:  
   A counter displays the number of completed todos out of the total, updating dynamically as todos are added, deleted, completed, or filtered.
 
-![Adding Todo](screenshots/adding-todo.png)  
-![Form Validation](screenshots/form-validation.png)
+![Adding Todo](./screenshots/todomodal.png)  
+![Form Validation](./screenshots/validation.png)
 
 ## Technologies
 
