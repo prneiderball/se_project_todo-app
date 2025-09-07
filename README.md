@@ -22,8 +22,8 @@ A lightweight, modular Todo application built with vanilla JavaScript, HTML, and
   - **All**: View all tasks.
   - **Completed**: View only completed tasks.
   - **Incomplete**: View only incomplete tasks.
-    ![todoCounter](./screenshots/todoCounter.png)
-    The counter updates dynamically to reflect the number of visible and completed todos.
+    
+  The counter updates dynamically to reflect the number of visible and completed todos.
 
 - **Real-Time Validation**:  
   ![Form Validation](./screenshots/validation.png)
@@ -36,7 +36,8 @@ A lightweight, modular Todo application built with vanilla JavaScript, HTML, and
   - Closing with the Escape (Esc) key.
   - Automatic form reset on close.
 
-- **Task Counter**:  
+- **Task Counter**:
+![todoCounter](./screenshots/todoCounter.png)
   A counter displays the number of completed todos out of the total, updating dynamically as todos are added, deleted, completed, or filtered.
 
 ## Technologies
